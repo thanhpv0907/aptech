@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #id_bheader {
+            text-align: center;
+        }
+
+        #id_table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        #id_table th,
+        #id_table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #id_table th {
+            background-color: #f2f2f2;
+        }
+
+        #id_table #id_stt,
+        #id_table #id_tenKhoaHoc,
+        #id_table #id_thoiLuong,
+        #id_table #id_hocPhi,
+        #id_row1 td,
+        #id_row2 td,
+        #id_row3 td {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="id_bheader">
+        <h1>DANH SÁCH KHOÁ HỌC</h1>
+    </header>
+
+    <table id="id_table">
+        <thead>
+            <tr id="id_headerRow">
+                <th id="id_stt">STT</th>
+                <th id="id_tenKhoaHoc">Tên khoá học</th>
+                <th id="id_thoiLuong">Thời lượng</th>
+                <th id="id_hocPhi">Học phí</th>
+            </tr>
+        </thead>
+        <tbody id="id_body">
+            <tr id="id_row1">
+                <td>1</td>
+                <td>HTML5</td>
+                <td>20 giờ</td>
+                <td>2.000.000 VND</td>
+            </tr>
+            <tr id="id_row2">
+                <td>2</td>
+                <td>CSS3</td>
+                <td>18 giờ</td>
+                <td>1.800.000 VND</td>
+            </tr>
+            <tr id="id_row3">
+                <td>3</td>
+                <td colspan="2">JavaScript (25 giờ)</td>
+                <td>3.000.000 VND</td>
+            </tr>
+        </tbody>
+    </table><br>
+
+    <h1> Giới thiệu khoá học</h1><br>
+
+    <video id="id_video" width="640" height="360" controls>
+        <source src="Video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video><br>
+
+    <h1>Bài học mẫu</h1><br />
+    <audio id="id_audio" controls>
+        <source src="Audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</body>
+
+</html>

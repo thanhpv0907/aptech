@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Page</title>
+    <style>
+        .container {
+            border-style: solid;
+            border-width: 1px;
+            border-color: blue;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 1000px;
+            height: 500px;
+            /* justify-content: space-evenly; */
+            /* . //main axis */
+            /*    6 giá trị :
+            1. Dồn lại : 3 loại : flex-start, flex-end, center.
+            2. Giãn cách: 3 loại : space-between, space-around, space-evenly. */
+            /*             align-items: center; */
+            /* //cross axis 
+                Căn items theo 1 dòng (chảy)
+            */
+
+            /*             main axis:
+                cross axis: */
+
+            align-content: space-between;
+            /*  // căn các dòng (chảy) khi flexbox có nhiều dòng.     */
+        }
+
+        .box {
+            width: 250px;
+            height: 50px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: red;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"> Item 1</div>
+        <div class="box"> Item 2</div>
+        <div class="box"> Item 3</div>
+        <div class="box"> Item 4</div>
+        <div class="box"> Item 5</div>
+        <div class="box"> Item 6</div>
+        <div class="box"> Item 7</div>
+        <div class="box"> Item 8</div>
+        <div class="box"> Item 9</div>
+        <div class="box"> Item 10</div>
+    </div>
+
+</body>
+
+</html>

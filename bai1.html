@@ -1,0 +1,79 @@
+<!doctype html5>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Course Registration</title>
+    <style>
+        #id_courseTitle {
+            text-align: center;
+        }
+
+        #id_fullname,
+        #id_email,
+        #id_dob,
+        #id_course,
+        #id_website,
+        #id_notes {
+            width: 100%;
+        }
+
+        #id_beginner,
+        #id_intermediate,
+        #id_advanced,
+        #id_html,
+        #id_css,
+        #id_javascript {
+            margin-right: 5px;
+        }
+
+        .choice {
+            display: inline-block;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1 id="id_courseTitle"> ĐĂNG KÝ KHOÁ HỌC HTML5</h1> <br>
+        <label> Họ tên </label><br>
+        <input id="id_fullname" type="text" required /> <br><br>
+        <label> Email </label> <br>
+        <input id="id_email" type="email" required /> <br><br>
+        <label> Ngày sinh </label> <br>
+        <input id="id_dob" type="date" required /> <br><br>
+        <label> Khoá học </label> <br>
+        <input id="id_course" type="text" required /> <br><br>
+        <label> Trình độ</label> <br>
+        <label class="choice"><input id="id_beginner" type="radio" name="level" value="beginner"> Beginner</label>
+        <label class="choice"><input id="id_intermediate" type="radio" name="level" value="intermediate">
+            Intermediate</label>
+        <label class="choice"><input id="id_advanced" type="radio" name="level" value="advanced"> Advanced</label>
+        <br><br>
+        <label> Kỹ năng </label> <br>
+        <label class="choice"><input id="id_html" type="checkbox" name="skills" value="html"> HTML</label>
+        <label class="choice"><input id="id_css" type="checkbox" name="skills" value="css"> CSS</label>
+        <label class="choice"><input id="id_javascript" type="checkbox" name="skills" value="javascript">
+            JavaScript</label>
+        <br><br>
+        <label> Màu yêu thích </label> <br>
+        <input id="id_favoriteColor" type="color" name="favoriteColor" /> <br><br>
+        <label> Website </label> <br>
+        <input id="id_website" type="url" name="website" /> <br><br>
+        <label> Tiến độ hoàn thành </label> <br>
+        <input id="id_progress" type="range" name="progress" min="0" max="100" /> <br><br>
+        <label> Ghi chú </label> <br>
+        <textarea id="id_notes" name="notes"></textarea> <br><br>
+        <button id="id_submit" type="submit">Đăng ký</button>
+        <button id="id_reset" type="reset">Làm lại</button>
+    </form>
+
+
+    <script>
+
+    </script>
+</body>
+
+</html>

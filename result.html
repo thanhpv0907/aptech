@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Your name is:</td>
+            <td id="id_name"></td>
+        </tr>
+        <tr>
+            <td>Your Birth year is:</td>
+            <td id="id_birth_year"></td>
+        </tr>
+        <tr>
+            <td>Your favorite is:</td>
+            <td id="id_favorite"></td>
+        </tr>
+        <tr>
+            <td>Your Gender is:</td>
+            <td id="id_gender"></td>
+        </tr>
+        <tr>
+            <td>Your address is:</td>
+            <td id="id_address"></td>
+        </tr>
+        <tr>
+            <td>Your phone is:</td>
+            <td id="id_phone"></td>
+        </tr>
+    </table>
+
+    <script>
+        const params = new URLSearchParams(location.search);
+        var name = params.get("username");
+        var birth_year = params.get("birthyear");
+        var favorite = params.getAll("favorite");
+        var gender = params.get("gender");
+        var address = params.get("address");
+        var phone = params.get("phone");
+
+        document.getElementById("id_name").innerText = name;
+        document.getElementById("id_birth_year").innerText = birth_year;
+        document.getElementById("id_favorite").innerText = favorite.join(", ");
+        document.getElementById("id_gender").innerText = gender;
+        document.getElementById("id_address").innerText = address;
+        document.getElementById("id_phone").innerText = phone;
+    </script>
+</body>
+
+</html>

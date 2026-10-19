@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="get" action="day8_process.html">
+        <label>
+            Username:
+            <input id="id_username" name="Username" />
+        </label>
+        <br />
+        <label>
+            Password:
+            <input type="password" id="id_password" name="Password" />
+        </label>
+        <br />
+
+        <button type="submit" onclick="return button_clicked();">
+            Gửi dữ liệu
+        </button>
+    </form>
+
+    <script>
+        function button_clicked() {
+            var username = document.getElementById("id_username").value;
+
+            if (username == "") {
+                alert("Moi ban nhap username!");
+                return false;
+            }
+
+            alert("Toi se gui di day: " + username);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+</head>
+
+<body>
+    <form id="userForm" method="get" action="result.html" onsubmit="return validateForm()">
+        <table>
+            <tr>
+                <td><label for="id_username">Name:</label></td>
+                <td><input type="text" id="id_username" name="username" required /></td>
+            </tr>
+            <tr>
+                <td><label for="birthYear">Birth year:</label></td>
+                <td>
+                    <select id="birthYear" name="birthyear" required>
+                        <option value="" selected disabled>Chọn năm sinh</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Favorite:</td>
+                <td>
+                    <label><input type="checkbox" id="favorite_football" name="favorite" value="football" required />
+                        Bóng đá</label>
+                    <label><input type="checkbox" id="favorite_programming" name="favorite" value="programming"
+                            required /> Lập trình</label>
+                    <label><input type="checkbox" id="favorite_music" name="favorite" value="music" required />
+                        Music</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <label><input type="radio" id="gender_male" name="gender" value="male" checked required />
+                        Male</label>
+                    <label><input type="radio" id="gender_female" name="gender" value="female" required />
+                        Female</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="id_address">Address:</label></td>
+                <td><textarea id="id_address" name="address" required rows="4" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="id_phone">Phone:</label></td>
+                <td><input type="tel" id="id_phone" name="phone" required /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><button type="submit" onclick="return send_clicked()">Gửi dữ liệu</button></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var elBirthYear = document.getElementById("birthYear");
+
+        for (var i = 1900; i <= 2026; i++) {
+            var option = document.createElement("option");
+            option.value = i;
+            option.textContent = i;
+            elBirthYear.appendChild(option);
+        }
+        function send_clicked() {
+            var elName = document.getElementById("id_username");
+            var name = elName.value;
+            var birthyear = document.getElementById("birthYear").value;
+            var elPhone = document.getElementById("id_phone");
+            var phone = elPhone.value;
+
+            if (name == "") {
+                alert("Moi ban nhap Tên!");
+                elName.focus();
+
+                return false;
+            }
+
+            if (birthyear == "") {
+                alert("Moi ban nhap Năm Sinh!");
+
+                return false;
+            }
+
+            var regPhone = /^09[0|1]\d{7}$/;
+            if (!regPhone.test(phone)) {
+                elPhone.focus();
+                alert("Mời bạn nhập đúng định dạng số điện thoại!");
+
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

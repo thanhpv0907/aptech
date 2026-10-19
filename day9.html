@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danh sách điểm</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #999;
+            padding: 2px;
+        }
+
+        th {
+            background-color: blue;
+        }
+
+        .selected {
+            background-color: #fff2a8;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="scoreForm">
+        <label for="id_name">Họ tên:</label>
+        <input type="text" id="id_name" required />
+        <br />
+
+        <label for="id_diem">Điểm:</label>
+        <input type="number" id="id_diem" min="0" max="10" step="0.1" required />
+        <br />
+
+        <button type="submit">Add data</button>
+    </form>
+
+    <hr />
+
+    <table id="scoreTable">
+        <thead>
+            <tr>
+                <th>Họ tên</th>
+                <th>Điểm Toán</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody id="id_body"></tbody>
+    </table>
+
+    <script>
+        var scoreForm = document.getElementById("scoreForm");
+        var tbody = document.querySelector("tbody");
+
+        scoreForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            add();
+            scoreForm.reset();
+        });
+
+        tbody.addEventListener("click", function (event) {
+            if (event.target.classList.contains("btn_delete")) {
+                event.target.closest("tr").remove();
+            }
+        });
+
+        function add() {
+            var row = document.createElement("tr");
+            var td1 = document.createElement("td");
+            td1.textContent = document.getElementById("id_name").value;
+
+            var td2 = document.createElement("td");
+            td2.textContent = document.getElementById("id_diem").value;
+
+            var td3 = document.createElement("td");
+            var deleteButton = document.createElement("button");
+            deleteButton.type = "button";
+            deleteButton.classList.add("btn_delete");
+            deleteButton.textContent = "Xóa";
+            td3.appendChild(deleteButton);
+
+            row.appendChild(td1);
+            row.appendChild(td2);
+            row.appendChild(td3);
+            document.getElementById("id_body").appendChild(row);
+        }
+    </script>
+</body>
+
+</html>
