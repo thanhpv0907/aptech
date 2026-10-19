@@ -8,6 +8,50 @@
     <style>
         #id_studentTitle {
             text-align: center;
+            font-size: 36px;
+        }
+
+        #id_fullname,
+        #id_email,
+        #id_phone,
+        #id_dob,
+        #id_gender,
+        #id_major,
+        #id_skills,
+        #id_password,
+        #id_confirmPassword {
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        #id_fullnameipt,
+        #id_emailipt,
+        #id_phoneipt,
+        #id_dobipt,
+        #id_majoript,
+        #id_passwordipt,
+        #id_confirmPasswordipt {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        #id_registerBtn {
+            background-color: #2198ee;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        #id_html,
+        #id_css,
+        #id_javascript,
+        #id_php {
+            margin-left: 2px;
+            float: right;
         }
     </style>
 </head>
@@ -15,9 +59,34 @@
 <body>
     <form>
         <h1 id="id_studentTitle">Student Registration</h1><br>
-        <label> Full Name </label><br>
-        <input id="id_fullname" type="text" required /> <br><br>
-
+        <label id="id_fullname"> Full Name </label><br>
+        <input id="id_fullnameipt" type="text" required /> <br><br>
+        <label id="id_email"> Email </label><br>
+        <input id="id_emailipt" type="email" required /> <br><br>
+        <label id="id_phone"> Phone </label><br>
+        <input id="id_phoneipt" type="tel" required /> <br><br>
+        <label id="id_dob"> Birthday </label><br>
+        <input id="id_dobipt" type="date" required /> <br><br>
+        <label id="id_gender"> Gender </label><br><br>
+        <input id="id_male" type="radio" name="gender" value="male" required /> Male<br><br>
+        <input id="id_female" type="radio" name="gender" value="female" required /> Female <br><br>
+        <label id="id_major">Major</label><br>
+        <select id="id_majoript" name="major" required>
+            <option value="" disabled selected>Select a major</option>
+            <option value="it">Information Technology</option>
+            <option value="business">Business</option>
+            <option value="design">Design</option>
+        </select><br><br>
+        <label id="id_skills"> Skills </label><br><br>
+        <input id="id_html" type="checkbox" name="skills" value="html" required /> HTML<br><br>
+        <input id="id_css" type="checkbox" name="skills" value="css" required /> CSS<br><br>
+        <input id="id_javascript" type="checkbox" name="skills" value="javascript" required /> JavaScript<br><br>
+        <input id="id_php" type="checkbox" name="skills" value="php" required /> PHP<br><br>
+        <label id="id_password"> Password </label><br>
+        <input id="id_passwordipt" type="password" required /> <br><br>
+        <label id="id_confirmPassword"> Confirm Password </label><br>
+        <input id="id_confirmPasswordipt" type="password" required /> <br><br>
+        <button id="id_registerBtn" type="submit">Register</button>
     </form>
 
 
